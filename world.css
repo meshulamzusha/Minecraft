@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    max-width: 100%;
+}
+
+#world {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 60px);
+}
+
+.block {
+    height: 40px;
+    background-size: 60px 40px;
+    image-rendering: pixelated;
+}
+
+.block:hover {
+    border: 2px solid #ffffff;
+}
+
+.sky {
+    background-color: #6ecbeb;
+}
+.grass {
+    background-image: url('./Grass.PNG');
+}
+
+.dirt {
+    background-image: url('./Dirt.PNG');
+}
+
+.gold {
+    background-image: url('./gold_stone.png');
+}
+
+.red {
+    background-image: url('./red_stone.png');
+}
+
+.blue {
+    background-image: url('./blue_stone.png');
+}
+
+.black {
+    background-image: url('./black_stone.png');
+}
+
+.gray {
+    background-image: url('./gray_stone.png');
+}
