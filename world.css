@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: minecraftFont;
+  src: url('./MinecraftSeven.ttf');
+}
+
 body {
     margin: 0;
     max-width: 100%;
@@ -9,7 +14,7 @@ body {
 
 #world {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 60px);
+    grid-template-columns: repeat(auto-fit, 3.03%);
 }
 
 .block {
@@ -51,4 +56,35 @@ body {
 
 .gray {
     background-image: url('./gray_stone.png');
+}
+
+.trunk {
+    background-image: url('./trunk.png');
+}
+
+.leaves {
+    background-image: url('./leaves.png');
+}
+
+.tree-container {
+    position: absolute;
+    top: 80px;
+    left: 200px;
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-column: 28 / 34;
+}
+
+footer {
+    display: flex;
+    background-color: #122020;
+}
+
+#message {
+    background-color: #6b6b6b;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    font-family: minecraftFont;
+    font-weight: 700;
 }
