@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 @font-face {
-  font-family: minecraftFont;
-  src: url('./MinecraftSeven.ttf');
+    font-family: minecraftFont;
+    src: url('./MinecraftSeven.ttf');
 }
 
 body {
@@ -30,6 +31,7 @@ body {
 .sky {
     background-color: #6ecbeb;
 }
+
 .grass {
     background-image: url('./Grass.PNG');
 }
@@ -66,17 +68,10 @@ body {
     background-image: url('./leaves.png');
 }
 
-.tree-container {
-    position: absolute;
-    top: 80px;
-    left: 200px;
-    display: grid;
-    grid-template-columns: repeat(6, 60px);
-    grid-column: 28 / 34;
-}
-
 footer {
+    padding: 30px;
     display: flex;
+    justify-content: space-between;
     background-color: #122020;
 }
 
@@ -87,4 +82,36 @@ footer {
     padding: 30px;
     font-family: minecraftFont;
     font-weight: 700;
+    font-size: 15px;
+}
+
+#game-tools-container {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+}
+
+#game-tools-container img { 
+    width: 5em;
+    image-rendering: pixelated;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.game-tool:hover {
+    border: solid 2px #ffffff;
+}
+
+#reset-btn {
+    background-color: #6b6b6b;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    font-family: minecraftFont;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.selected-tool {
+    border: solid 2px #ffffff;
 }
