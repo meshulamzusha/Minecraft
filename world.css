@@ -70,12 +70,14 @@ body {
 
 footer {
     padding: 30px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     background-color: #122020;
 }
 
-#message {
+#cache-area {
+    width: 50%;
     background-color: #6b6b6b;
     color: #ffffff;
     border-radius: 5px;
@@ -85,7 +87,12 @@ footer {
     font-size: 15px;
 }
 
+.toggle-cache-area {
+    display: none;
+}
+
 #game-tools-container {
+    justify-self: center;
     align-self: center;
     display: flex;
     gap: 20px;
@@ -96,6 +103,15 @@ footer {
     image-rendering: pixelated;
     border-radius: 5px;
     padding: 10px;
+    background-color: #444444;
+}
+
+.cache-img:hover {
+    transform: scale(1.2);
+}
+
+.cache-img {
+    transition: transform 0.2s ease-in;
 }
 
 .game-tool:hover {
@@ -103,6 +119,8 @@ footer {
 }
 
 #reset-btn {
+    width: 30%;
+    justify-self: end;
     background-color: #6b6b6b;
     color: #ffffff;
     border-radius: 5px;
@@ -114,4 +132,20 @@ footer {
 
 .selected-tool {
     border: solid 2px #ffffff;
+}
+
+.axe-cursor {
+    cursor: url('./items/gold_axe.png'), default;
+}
+
+.pickaxe-cursor {
+    cursor: url('./items/gold_pickaxe.png'), default;
+}
+
+.shovel-cursor {
+    cursor: url('./items/gold_shovel.png'), default;
+}
+
+.sword-cursor {
+    cursor: url('./items/gold_sword.png'), default;
 }
