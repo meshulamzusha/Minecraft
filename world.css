@@ -36,39 +36,39 @@ body {
 }
 
 .grass {
-    background-image: url('./Grass.PNG');
+    background-image: url('./images/grass.png');
 }
 
 .dirt {
-    background-image: url('./Dirt.PNG');
+    background-image: url('./images/dirt.png');
 }
 
 .gold {
-    background-image: url('./gold_stone.png');
+    background-image: url('./images/gold_stone.png');
 }
 
 .red {
-    background-image: url('./red_stone.png');
+    background-image: url('./images/red_stone.png');
 }
 
 .blue {
-    background-image: url('./blue_stone.png');
+    background-image: url('./images/blue_stone.png');
 }
 
 .black {
-    background-image: url('./black_stone.png');
+    background-image: url('./images/black_stone.png');
 }
 
 .gray {
-    background-image: url('./gray_stone.png');
+    background-image: url('./images/gray_stone.png');
 }
 
 .trunk {
-    background-image: url('./trunk.png');
+    background-image: url('./images/trunk.png');
 }
 
 .leaves {
-    background-image: url('./leaves.png');
+    background-image: url('./images/leaves.png');
 }
 
 footer {
@@ -82,10 +82,11 @@ footer {
 
 .cache-area {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 33%);
+    grid-template-columns: repeat(auto-fit, 13%);
     background-color: #6b6b6b;
     color: #ffffff;
     border-radius: 5px;
+    gap: 20px;
     padding: 30px;
     font-family: minecraftFont;
     font-weight: 700;
@@ -110,6 +111,7 @@ footer {
     justify-self: center;
     background-size: 60px 40px;
     image-rendering: pixelated;
+    cursor: pointer;
 }
 
 .toggle-cache-area {
@@ -160,17 +162,53 @@ footer {
 }
 
 .axe-cursor {
-    cursor: url('./items/gold_axe.png'), default;
+    cursor: url('./images/gold_axe.png'), default;
 }
 
 .pickaxe-cursor {
-    cursor: url('./items/gold_pickaxe.png'), default;
+    cursor: url('./images/gold_pickaxe.png'), default;
 }
 
 .shovel-cursor {
-    cursor: url('./items/gold_shovel.png'), default;
+    cursor: url('./images/gold_shovel.png'), default;
 }
 
 .sword-cursor {
-    cursor: url('./items/gold_sword.png'), default;
+    cursor: url('./images/gold_sword.png'), default;
+}
+
+.leaves-cursor {
+    cursor: url('./images/leaves-cursor.png'), default;
+}
+
+.trunk-cursor {
+    cursor: url('./images/trunk-cursor.png'), default;    
+}
+
+.grass-cursor {
+    cursor: url('./images/grass-cursor.png'), default;
+}
+
+.dirt-cursor {
+    cursor: url('./images/dirt-cursor.png'), default;
+}
+
+.black-cursor {
+    cursor: url('./images/black-cursor.png'), default;
+}
+
+.blue-cursor {
+    cursor: url('./images/blue-cursor.png'), default;
+}
+
+.gray-cursor {
+    cursor: url('./images/gray-cursor.png'), default;
+}
+
+.gold-cursor {
+    cursor: url('./images/gold-cursor.png'), default;
+}
+
+.red-cursor {
+    cursor: url('./images/red-cursor.png'), default;
 }
