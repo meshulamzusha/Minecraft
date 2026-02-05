@@ -9,6 +9,9 @@
 }
 
 body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
     margin: 0;
     max-width: 100%;
 }
@@ -73,11 +76,13 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
+    align-items: center;
     background-color: #122020;
 }
 
-#cache-area {
-    width: 50%;
+.cache-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33%);
     background-color: #6b6b6b;
     color: #ffffff;
     border-radius: 5px;
@@ -87,13 +92,32 @@ footer {
     font-size: 15px;
 }
 
+.cache-area-start {
+    width: fit-content;
+    height: fit-content;
+    background-color: #6b6b6b;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    font-family: minecraftFont;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.cache-area-item {
+    height: 40px;
+    width: 60px;
+    justify-self: center;
+    background-size: 60px 40px;
+    image-rendering: pixelated;
+}
+
 .toggle-cache-area {
-    display: none;
+    visibility: hidden;
 }
 
 #game-tools-container {
     justify-self: center;
-    align-self: center;
     display: flex;
     gap: 20px;
 }
@@ -121,6 +145,7 @@ footer {
 #reset-btn {
     width: 30%;
     justify-self: end;
+    height: fit-content;
     background-color: #6b6b6b;
     color: #ffffff;
     border-radius: 5px;

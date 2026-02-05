@@ -14,7 +14,8 @@ function createGameWorld() {
                 ) {
                     block.classList.replace('grass', 'sky')
                     counters.grass = (counters.grass || 0) + 1
-                    console.log(counters)
+                    onFirstBlockClick()
+                    updateCache()
                 }
             })
         } else if (index >= 345 && index < 400) {
@@ -23,7 +24,8 @@ function createGameWorld() {
                 if (body.classList.contains('shovel-cursor') && !block.classList.contains('sky')) {
                     block.classList.replace('dirt', 'sky')
                     counters.dirt = (counters.dirt || 0) + 1
-                    console.log(counters)
+                    onFirstBlockClick()
+                    updateCache()
                 }
             })
         } else if (index >= 400 && index < 594) {
@@ -35,7 +37,8 @@ function createGameWorld() {
                 if (body.classList.contains('pickaxe-cursor') && !block.classList.contains('sky')) {
                     block.classList.replace(stoneType, 'sky')
                     counters[stoneType] = (counters[stoneType] || 0) + 1
-                    console.log(counters)
+                    onFirstBlockClick()
+                    updateCache()
                 }
             })
         } else {
@@ -72,7 +75,8 @@ function createTree(firstBlock) {
                     if (body.classList.contains('axe-cursor') && !block.classList.contains('sky')) {
                         block.classList.replace('leaves', 'sky')
                         counters.leaves = (counters.leaves || 0) + 1
-                        console.log(counters)
+                        onFirstBlockClick()
+                        updateCache()
                     }
                 })
             }
@@ -83,7 +87,8 @@ function createTree(firstBlock) {
                     if (body.classList.contains('axe-cursor') && !block.classList.contains('sky')) {
                         block.classList.replace('trunk', 'sky')
                         counters.trunk = (counters.trunk || 0) + 1
-                        console.log(counters)
+                        onFirstBlockClick()
+                        updateCache()
                     }
                 })
             }
@@ -110,16 +115,49 @@ function onToolSelected() {
     })
 }
 
-const cache = document.getElementById('cache-img')
-const cacheArea = document.getElementById('cache-area')
-cache.addEventListener('click', () => {
-    cacheArea.classList.toggle('toggle-cache-area')
-})
+function toggleCache() {
+    const cache = document.getElementById('cache-img')
+    const cacheArea = document.getElementById('cache-area')
+    cache.addEventListener('click', () => {
+        cacheArea.classList.toggle('toggle-cache-area')
+    })
+}
 
+function getCacheItemClasses() {
+    const cache = document.getElementById('cache-area')
+    const cacheItemClasses = [...cache.children].map(item => {
+        return item.classList[1]
+    })
 
-onToolSelected()
+    return cacheItemClasses
+}
+
+function updateCache() {
+    const cache = document.getElementById('cache-area')
+
+    Object.entries(counters).forEach(([blockType, counter]) => {
+        if (!getCacheItemClasses().includes(blockType)) {
+            const block = document.createElement('div');
+            block.id = blockType
+            block.classList.add('cache-area-item', blockType)
+            block.textContent = counter
+            cache.appendChild(block)
+        } else {
+            cache.getElementsByClassName(blockType)[0].textContent = counter
+        }
+    })
+}
+
+function onFirstBlockClick() {
+    const cache = document.getElementById('cache-area')
+        cache.innerText = ""
+        cache.className = 'cache-area'
+}
+
 createGameWorld()
 createTree(68)
 createTree(75)
 createTree(83)
 createTree(92)
+toggleCache()
+onToolSelected()
